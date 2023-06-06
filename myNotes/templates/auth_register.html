@@ -1,0 +1,24 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+<header>
+    <h1>Авторизация</h1>
+</header>
+<div class="login-frame">
+    <form action="/diary/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <div class="buttons-container">
+        <input type="submit" value="Login" name="btn_login">
+        <input type="submit" value="Register" name="btn_register">
+    </div>
+</form>
+</div>
+</form>
+</body>
+</html>

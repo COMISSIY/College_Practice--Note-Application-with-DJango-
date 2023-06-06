@@ -1,0 +1,169 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    display: flex;
+    background: orange;
+    height: 10%;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    position: relative;
+}
+
+header a{
+    position: absolute;
+    right: 10px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition-duration: 0.3s;
+}
+
+header a:hover{
+    text-decoration: underline;
+}
+
+header img{
+    background: yellow;
+}
+
+header input{
+    height: 30px;
+    width: 30%;
+    border-radius: 25px;
+    border: none;
+    padding-left: 2.5%;
+    font-size: 18px;
+    border: solid 1px orange;
+    transition-duration: 0.1s;
+}
+
+header input:focus{
+    outline: none;
+
+    border-color: white;
+}
+
+
+
+.content-frame{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 85%;
+}
+
+.notes-feed{
+    width: 30%;
+    overflow-y: scroll;
+    border-right: solid 1px black;
+}
+
+.note{
+    background: yellow;
+    border-radius: 25px;
+    height: 25%;
+    width: 90%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 2%;
+    transition-duration: 0.3s;
+    border-top-right-radius: 0px;
+}
+
+.note-header{
+    border-bottom: solid 1px black;
+}
+
+.notes-feed .note:hover{
+    height: 30%;
+}
+
+.note-header{
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.note-text{
+    overflow-wrap: break-word;
+}
+
+#notes-add{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    border: none;
+    background: orange;
+    font-size: 42px;
+    width: 100px;
+    height: 100px;
+    transition-duration: 0.2s;
+}
+
+.notes-preview{
+    width: 100%;
+    
+}
+
+.notes-edit{
+    width: 60%;
+    margin-left: 5%;
+}
+
+.notes-preview .note-header{
+    display: flex;
+    align-items: center;
+}
+
+.notes-preview .note-header input{
+    border: none;
+    width: 80%;
+    background: yellow;
+    font-size: 24px;
+}
+
+.notes-preview .note-header input:focus{
+    outline: none;
+}
+
+.notes-preview .note{
+    height: 95%;
+    width: 100%;
+}
+
+.notes-preview .note-edit-button{
+    border: none;
+    width: 10%;
+    margin: auto;
+    background: orange;
+    margin-left: 4px;
+    border-radius: 25px;
+    transition-duration: 0.2s;
+}
+
+.notes-preview .note-edit-button:hover{
+    width: 12%;
+}
+
+#notes-add:hover{
+    background: yellow;
+    border: solid 5px orange;
+}
+
+textarea {
+    resize: none;
+  width: 100%;
+  height: 90%;
+  border: none;
+  background: yellow;
+  line-height: 120%;
+}
+
+textarea:focus{
+    outline: none;
+}

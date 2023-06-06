@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Notes</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <input type="search" placeholder="Поиск по заголовкам"></input>
+        <a href="auth">User: {{ username }}</a>
+    </header>
+    <div class="content-frame">
+        <div class="notes-feed">
+            {% for note in notes%}
+             <div onclick="updateNoteView(this)" class="note" noteid={{ note.id }}>
+                <div class="note-header">{{note.title}}</div>
+                <div class="note-text">{{note.text}}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <form class="notes-edit" action="/diary/" method="post">
+            {% csrf_token %}
+            <div class="notes-preview">
+                 <div class="note" noteid="">
+                      <div id="noteId" style="display: none;">
+                          {{ newNoteForm.noteId }}
+                      </div>
+                    <div class="note-header">
+                        {{ newNoteForm.title }}
+                        <button class="note-edit-button" disabled="true" name="btn_save_note" type="submit">save</button>
+                        <button class="note-edit-button" disabled="true" name="btn_delete_note" type="submit">delete</button>
+                        <button class="note-edit-button" onclick="clearPreview()" type="button">clear</button>
+                    </div>
+                    <div class="note-text">{{ newNoteForm.text }}</div>
+                </div>
+            </div>
+            <button id="notes-add" name="btn_new_note" type="submit">+</button>
+        </form>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
